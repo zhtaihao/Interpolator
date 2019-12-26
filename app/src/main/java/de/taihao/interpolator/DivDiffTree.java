@@ -11,9 +11,9 @@ import androidx.annotation.NonNull;
  * 
  * Example:
  *      x=0, f(x)=1, f'(x)=-1
- *      Then 'm' will be 1, since the only the first derivative is known.
- *      If this is the case for all interpolated points, then 'maxM' will be set to 1.
- *      For the purpose of calculating the devided difference tree, each 'x' value will be duplicated once.
+ *      Then 'm' will be 1, since only the first derivative is known.
+ *      If this is the case for all points to be interpolated, then 'maxM' will be set to 1.
+ *      For the purpose of calculating the divided difference tree, each 'x' value will be duplicated once.
  *
  * // TODO: 26.12.2019 : implement 'calculate' method for DivDiffTree class
  */
