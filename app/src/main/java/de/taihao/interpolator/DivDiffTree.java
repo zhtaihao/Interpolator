@@ -40,10 +40,14 @@ public class DivDiffTree {
 
     /**
      * Method to perform the mathematical aspect of the divided difference formula.
-     * First checks if entirely identical points were entered; in that case, there is no clearly defined divided difference (division by zero would occur). Instead it will return the n-th derivative of that single point, where n is the amount of points entered (ref. Wikipedia).
+     * First checks if entirely identical points were entered;
+     * in that case, there is no clearly defined divided difference (division by zero would occur).
+     * Instead it will return the n-th derivative of that single point,
+     * where n is the amount of points entered (ref. Wikipedia).
      *
      * @param points an ArrayList of points, may be several identical ones
-     * @return returns the calculated divided difference of those points, outputs the n-th derivative instead if "one" point was entered
+     * @return returns the calculated divided difference of those points,
+     *      outputs the n-th derivative instead if "one" point was entered
      */
     public double getDivDiff(@NonNull ArrayList<Point> points) {
         int amountOfPoints = points.size();
