@@ -49,7 +49,7 @@ public class DivDiffTree {
      * @return returns the calculated divided difference of those points,
      * outputs the n-th derivative instead if "one" point was entered n times
      */
-    public double getDivDiff(@NonNull ArrayList<Point> points) {
+    public double getDivDiff(@NonNull ArrayList<Point> points) throws IllegalArgumentException {
         int amountOfPoints = points.size();
         double result = 0;
 
@@ -71,7 +71,11 @@ public class DivDiffTree {
                         denominator *= (p.getX() - points.get(k).getX());
                     }
                 }
-                result += p.getF()[0] / denominator;
+                if (denominator == 0.0) {
+                    throw new IllegalArgumentException("The denominator is 0 and division can't be performed.");
+                } else {
+                    result += p.getF()[0] / denominator;
+                }
             }
         }
         return result;
