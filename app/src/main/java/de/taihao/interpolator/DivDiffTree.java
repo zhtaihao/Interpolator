@@ -61,11 +61,8 @@ public class DivDiffTree {
         else {
             for (Point p : points) {
                 double denominator = 1;
-                for (int k = 0; k < amountOfPoints; k++) {
-                    if (k != points.indexOf(p)) {
-                        denominator *= (p.getX() - points.get(k).getX());
-                    }
-                }
+                for (int k = 0; k < amountOfPoints; k++)
+                    if (k != points.indexOf(p)) denominator *= (p.getX() - points.get(k).getX());
                 result += p.getF()[0] / denominator;
             }
         }
