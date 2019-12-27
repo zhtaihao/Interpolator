@@ -16,8 +16,15 @@ public class Point {
         m = f.length -1;
     }
 
-    public int getM() {
+    int getM() {
         return m;
     }
 
+    double getX() {
+        return x;
+    }
+
+    double[] getF() {
+        return f;
+    }
 }
