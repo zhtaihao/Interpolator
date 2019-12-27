@@ -52,12 +52,12 @@ public class DivDiffTree {
     public double getDivDiff(@NonNull ArrayList<Point> points) {
         int amountOfPoints = points.size();
         double result = 0;
-        boolean allPointsEqual = false;
+        boolean isAllPointsEqual = false;
 
-        for (Point p : points) if (p.equals(points.get(0))) allPointsEqual = true;
+        for (Point p : points) if (p.equals(points.get(0))) isAllPointsEqual = true;
 
 
-        if (allPointsEqual) return points.get(0).getF()[amountOfPoints];
+        if (isAllPointsEqual) return points.get(0).getF()[amountOfPoints];
         else {
             for (Point p : points) {
                 double denominator = 1;
