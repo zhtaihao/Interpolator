@@ -47,22 +47,30 @@ public class DivDiffTree {
      *
      * @param points an ArrayList of points, may be several identical ones
      * @return returns the calculated divided difference of those points,
-     *      outputs the n-th derivative instead if "one" point was entered
+     * outputs the n-th derivative instead if "one" point was entered n times
      */
     public double getDivDiff(@NonNull ArrayList<Point> points) {
         int amountOfPoints = points.size();
         double result = 0;
-        boolean isAllPointsEqual = false;
 
-        for (Point p : points) if (p.equals(points.get(0))) isAllPointsEqual = true;
+        boolean isAllPointsEqual = true;
+        for (Point p : points) {
+            if (!p.equals(points.get(0))) {
+                isAllPointsEqual = false;
+                break;
+            }
+        }
 
-
-        if (isAllPointsEqual) return points.get(0).getF()[amountOfPoints];
-        else {
+        if (isAllPointsEqual) {
+            return points.get(0).getF()[amountOfPoints];
+        } else {
             for (Point p : points) {
                 double denominator = 1;
-                for (int k = 0; k < amountOfPoints; k++)
-                    if (k != points.indexOf(p)) denominator *= (p.getX() - points.get(k).getX());
+                for (int k = 0; k < amountOfPoints; k++) {
+                    if (k != points.indexOf(p)) {
+                        denominator *= (p.getX() - points.get(k).getX());
+                    }
+                }
                 result += p.getF()[0] / denominator;
             }
         }
