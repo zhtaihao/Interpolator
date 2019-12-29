@@ -19,7 +19,12 @@ import androidx.annotation.NonNull;
  */
 
 public class DivDiffTree {
+    /**
+     * max amount of derivatives expected to need the factorial of.
+     * getFactorial() fails at around >15 anyway lol
+     */
     private static final int MAX_DERIVATIVES = 5;
+
     private ArrayList<Point> points;
     private int maxM = 0;
 
@@ -83,9 +88,9 @@ public class DivDiffTree {
     private int getFactorial(int k) throws IllegalArgumentException {
         int result = 1;
         if (k < 0)
-            throw new IllegalArgumentException(k + "is a negative number, factorial can't be computed.");
+            throw new IllegalArgumentException(k + " is a negative number, factorial can't be computed.");
         else if (k > MAX_DERIVATIVES)
-            throw new IllegalArgumentException(k + "is too large to calculate a factorial.");
+            throw new IllegalArgumentException(k + " is too large to calculate a factorial.");
         else if (k == 0) return 1;
         else if (k == 1) return 1;
         else {
